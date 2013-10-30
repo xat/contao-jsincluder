@@ -30,12 +30,24 @@ class DcaLayout
 		{
 			if ($objLayout->orderJsExt != '')
 			{
-				$arrOrdered = array_map('intval', explode(',', $objLayout->orderJsExt));
-				$arrExternal = array_merge($arrOrdered, array_diff($arrExternal, $arrOrdered));
+				if (version_compare(VERSION, '3.2', '<'))
+				{
+					$arrOrdered = array_map('intval', explode(',', $objLayout->orderJsExt));
+					$arrExternal = array_merge($arrOrdered, array_diff($arrExternal, $arrOrdered));
+				} else
+				{
+					$arrExternal = deserialize($objLayout->orderJsExt);
+				}
 			}
 
 			// Get the file entries from the database
-			$objFiles = \FilesModel::findMultipleByIds($arrExternal);
+			if (version_compare(VERSION, '3.2', '<'))
+			{
+				$objFiles = \FilesModel::findMultipleByIds($arrExternal);
+			} else
+			{
+				$objFiles = \FilesModel::findMultipleByUuids($arrExternal);
+			}
 
 			if ($objFiles !== null)
 			{

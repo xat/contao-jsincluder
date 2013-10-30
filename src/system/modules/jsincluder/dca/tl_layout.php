@@ -24,5 +24,5 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['externalJs'] = array
 $GLOBALS['TL_DCA']['tl_layout']['fields']['orderJsExt'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_layout']['orderJsExt'],
-	'sql'                     => "text NULL"
+	'sql'                     => "blob NULL"
 );
