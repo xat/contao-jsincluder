@@ -1,0 +1,28 @@
+{
+    "name":"sope/jsincluder",
+    "description":"JsIncluder extends tl_layout with an JS File Picker",
+    "keywords":["JavaScript","Layout"],
+    "type":"contao-module",
+    "homepage":"http://sope.io",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Simon Kusterer",
+            "email":"simon@sope.io",
+            "homepage":"http://www.sope.io",
+            "role":"Developer"
+        }
+    ],
+    "require":{
+        "php":">=5.3",
+        "contao/core":">=3.0,<4",
+        "contao-community-alliance/composer-installer":"*"
+    },
+    "extra":{
+        "contao":{
+            "sources":{
+                "src/system/modules/jsincluder":"system/modules/jsincluder"
+            }
+        }
+    }
+}
