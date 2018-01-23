@@ -4,7 +4,7 @@
     "keywords":["JavaScript","Layout"],
     "type":"contao-module",
     "homepage":"http://sope.io",
-    "license":"LGPL-3.0+",
+    "license":"LGPL-3.0-or-later",
     "authors":[
         {
             "name":"Simon Kusterer",
